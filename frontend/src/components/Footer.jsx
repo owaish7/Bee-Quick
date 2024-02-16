@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer
 
-        className={`w-screen min-h-[50vh] py-14 flex flex-col items-center justify-center gap-6 dark:bg-[#44403C] dark:text-white bg-[#1d252c]`}
+        className="w-screen min-h-[50vh] py-14 flex flex-col items-center justify-center gap-6 dark:bg-[#44403C] dark:text-white bg-[#1d252c]"
       >
 
       <div className="relative h-fit w-screen flex flex-col items-center justify-center">
@@ -45,7 +45,7 @@ const Footer = () => {
           <p style={{ color: '#FAF9F6' }} className="comfort text-center text-gray-800 font-bold mobile:text-sm dark:bg-[#44403C] dark:text-white">
 
         
-            BeeQuick is a website which enables the user to travel in a city in more effecient way by booking bike as a taxi instead cab to avoid traffic and provides for driver as passive income source.
+          BeeQuick is a website that enables users to conveniently rent bicycles on a college campus. It provides an efficient and eco-friendly way to travel within the campus while also offering bicycle owners a passive income source by renting out their bicycles.
           </p>
 
 

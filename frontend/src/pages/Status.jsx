@@ -52,7 +52,7 @@ function Status() {
         </div>
         {rideFound && (
           <div className="text-black bg-tertiary bg-opacity-90 font-footer opacity-100 transition-opacity duration-300 transform translate-y-0 mt-6">
-            <p className="text-lg font-semibold">Plate Number: {driverDetails.bike_id}</p>
+            <p className="text-lg font-semibold">Bicycle Number: {driverDetails.bike_id}</p>
             <button
               onClick={cancelRide}
               className="theme-btn-shadow rounded-xl bg-[#FFC629] px-4 py-2 mt-4 text-sm font-Nunito sans text-[#000000] font-normal mobile:text-xs hover:bg-[#FFA500] hover:text-white hover:border-[#000000]"
