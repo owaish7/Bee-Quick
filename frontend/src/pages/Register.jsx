@@ -154,14 +154,7 @@ function Register() {
         console.log("Registration failed")
         console.log(error)
       }
-      // console.log('Registration successful');
-      // console.log('Name:', name);
-      // console.log('Email:', email);
-      // console.log('Gender:', gender);
-      // console.log('Residence:', residence);
-      // console.log('Age:', age);
-      // console.log('Phone Number:', phoneNumber);
-      // console.log('Role:', role);
+
     }
   };
 
@@ -186,7 +179,7 @@ function Register() {
           required
         >
           <option value="">Select Role</option>
-          <option value="Driver">Driver</option>
+          <option value="Driver">Partner</option>
           <option value="Customer">Customer</option>
         </select>
         {roleError && <p className="text-red-500 text-sm">{roleError}</p>}

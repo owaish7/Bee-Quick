@@ -46,7 +46,7 @@ function LoginRoot() {
               onChange={handleUserTypeChange}
             />
             <label htmlFor="driver" className="ml-2">
-              Driver
+              Partner
             </label>
           </div>
         </div>

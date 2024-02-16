@@ -13,7 +13,7 @@ const Home = () => {
                     <div class="mx-auto max-w-2xl py-10 sm:py-48 lg:py-10">
                         <div class="text-center">
                             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-cinzel" style={{ fontFamily: 'Cinzel' }}>Ride with Ease</h1>
-                            <p class="mt-6 text-lg leading-8 text-gray-600" style={{ fontFamily: 'Nunito Sans' }}>Hello {currentUser ? currentUser.name : 'Guest'}, Experience the convenience of getting around town with BeeQuick. No more waiting in traffic or struggling to find parking. Our eco-friendly transportation options are perfect for short trips and quick errands.</p>
+                            <p class="mt-6 text-lg leading-8 text-gray-600" style={{ fontFamily: 'Nunito Sans' }}>Hello {currentUser ? currentUser.name : 'Guest'}, Experience the convenience of getting around campus with BeeQuick. Our eco-friendly bicycle rental options are perfect for short trips and quick errands.</p>
                             {
                                 !currentUser &&
                                 (
@@ -39,7 +39,7 @@ const Home = () => {
                             <div class="flex flex-col">
                                 <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">Convenient Transportation</dt>
                                 <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-800">
-                                    <p class="flex-auto" style={{ fontFamily: 'Nunito Sans' }}>Efficiently travel through crowded city streets with our bike and scooter taxi service.</p>
+                                    <p class="flex-auto" style={{ fontFamily: 'Nunito Sans' }}>Efficiently navigate through the college campus with our bicycle rental service. Say goodbye to crowded campus streets and enjoy the convenience of biking to your destination.</p>
                                 </dd>
                             </div>
                             <div class="flex flex-col">
@@ -75,12 +75,12 @@ const Home = () => {
                         <div class="p-8 bg-white border border-gray-200 rounded-lg shadow-lg" style={{ backgroundColor: '#fff7de' }}>
                             <h3 class="text-base font-semibold leading-7 text-gray-900" style={{ fontFamily: 'Cinzel' }}>Step 2</h3>
                             <p class="mt-4 text-xl font-bold tracking-tight text-gray-900" style={{ fontFamily: 'Nunito Sans' }}>Book Your Ride</p>
-                            <p class="mt-4 text-base leading-7 text-gray-800" style={{ fontFamily: 'Nunito Sans' }}>Select your pickup and drop-off locations, choose your preferred vehicle, and confirm your booking within the app.</p>
+                            <p class="mt-4 text-base leading-7 text-gray-800" style={{ fontFamily: 'Nunito Sans' }}>Select your bicycle pickup and drop-off locations, choose your preferred bicycle and confirm your booking within the app.</p>
                         </div>
                         <div class="p-8 bg-white border border-gray-200 rounded-lg shadow-lg" style={{ backgroundColor: '#fff7de' }}>
                             <h3 class="text-base font-semibold leading-7 text-gray-900" style={{ fontFamily: 'Cinzel' }}>Step 3</h3>
                             <p class="mt-4 text-xl font-bold tracking-tight text-gray-900" style={{ fontFamily: 'Nunito Sans' }}>Enjoy Your Ride</p>
-                            <p class="mt-4 text-base leading-7 text-gray-800" style={{ fontFamily: 'Nunito Sans' }}>Relax and let our experienced drivers take you to your destination in comfort and style.</p>
+                            <p class="mt-4 text-base leading-7 text-gray-800" style={{ fontFamily: 'Nunito Sans' }}>Relax and enjoy the ride with our reliable bicycles. End the ride and pay for hourly basis.</p>
                         </div>
                     </div>
                 </div>
@@ -89,11 +89,11 @@ const Home = () => {
             <div class="bg-amber-400">
                 <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
                     <div class="mx-auto max-w-2xl text-center">
-                        <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl" style={{ fontFamily: 'Cinzel' }}><br />Experience the convenience of our bike and scooter taxi service</h2>
+                        <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl" style={{ fontFamily: 'Cinzel' }}><br />Experience the convenience of our bicycle rental service</h2>
                         <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-800" style={{ fontFamily: 'Nunito Sans' }}>Join thousands of satisfied customers and drivers who have chosen our eco-friendly transportation solution</p>
                         <div class="mt-10 flex items-center justify-center gap-x-6">
                             <a href="/Rent" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-amber-400 shadow-sm hover:bg-yellow-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Book a ride</a>
-                            <a href="#" class="text-sm font-semibold leading-6 text-white">Become A Driver<span aria-hidden="true">→</span></a>
+                            <a href="#" class="text-sm font-semibold leading-6 text-white">Become a Bicycle Lending Partner! <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
                 </div>
@@ -105,16 +105,16 @@ const Home = () => {
                     <div class="mt-8 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
                         <div class="relative bg-yellow-200 rounded-lg shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
                             <p class="text-gray-700 text-lg sm:text-xl md:text-2xl lg:text-3xl" style={{ fontFamily: 'Nunito Sans' }}>
-                                "I love using the bike and scooter taxi service. It's so convenient and eco-friendly. The app is easy to use, and the drivers are always friendly and punctual."
+                                "I love using the bicycle rental service. It's so convenient and eco-friendly. The app is easy to use, and the renters are always friendly and punctual."
                             </p>
                             <p class="mt-4 text-yellow-600 font-semibold text-base sm:text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Nunito Sans' }}>- Darpan, Customer</p>
                         </div>
 
                         <div class="relative bg-yellow-200 rounded-lg shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
                             <p class="text-gray-700 text-lg sm:text-xl md:text-2xl lg:text-3xl" style={{ fontFamily: 'Nunito Sans' }}>
-                                "As a driver at BeeQuick, I enjoy the flexibility it offers. I can choose my working hours and earn extra income. It's a win-win for me!"
+                                "As a bicycle lender with BeeQuick, I enjoy the flexibility it offers. I can choose when to rent out my bicycle and earn extra income. It's a win-win for me!"
                             </p>
-                            <p class="mt-4 text-yellow-600 font-semibold text-base sm:text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Nunito Sans' }}>- Nitya, Driver</p>
+                            <p class="mt-4 text-yellow-600 font-semibold text-base sm:text-lg md:text-xl lg:text-2xl" style={{ fontFamily: 'Nunito Sans' }}>- Nitya, Bicycle Partner</p>
                         </div>
                     </div>
                 </div>
@@ -134,24 +134,26 @@ const Home = () => {
                         <div class="mt-10 lg:col-span-7 lg:mt-0">
                             <dl class="space-y-10">
                                 <div>
-                                    <dt class="text-base font-semibold leading-7 text-gray-900">How do I book a bike or scooter taxi?</dt>
-                                    <dd class="mt-2 text-base leading-7 text-gray-600">To book a bike or scooter taxi, simply create an account. From there, you can select your pickup and drop-off locations, choose the type of vehicle you prefer, and confirm your booking.</dd>
+                                    <dt class="text-base font-semibold leading-7 text-gray-900">How do I rent a bicycle?</dt>
+                                    <dd class="mt-2 text-base leading-7 text-gray-600">To rent a bicycle, simply create an account on BeeQuick. From there, you can browse available bicycles, select the one you prefer, and choose your rental period.</dd>
                                 </div>
                                 <div>
-                                    <dt class="text-base font-semibold leading-7 text-gray-900">Are the bikes and scooters safe for transportation?</dt>
-                                    <dd class="mt-2 text-base leading-7 text-gray-600">Yes, all our bikes and scooters undergo regular maintenance and safety checks to ensure they are in good condition. Our drivers are also trained to prioritize safety and follow traffic rules.</dd>
+                                    <dt class="text-base font-semibold leading-7 text-gray-900">Are the bicycles safe to ride?</dt>
+                                    <dd class="mt-2 text-base leading-7 text-gray-600">Yes, all bicycles listed on BeeQuick undergo regular maintenance and safety checks to ensure they are in good condition for riding. Renters are also encouraged to inspect the bicycle before renting.</dd>
                                 </div>
                                 <div>
-                                    <dt class="text-base font-semibold leading-7 text-gray-900">How long will it take for a bike or scooter taxi to arrive?</dt>
-                                    <dd class="mt-2 text-base leading-7 text-gray-600">The arrival time of a bike or scooter taxi depends on various factors such as your location, traffic conditions, and availability of drivers. Our website will provide you with an estimated arrival time when you make a booking.</dd>
+                                    <dt class="text-base font-semibold leading-7 text-gray-900">How long can I rent a bicycle for?</dt>
+                                    <dd class="mt-2 text-base leading-7 text-gray-600">You can rent a bicycle for a minimum of 1/2 hour up to a maximum of 24 hours, depending on your needs. Longer rental periods may be available upon request.</dd>
                                 </div>
                                 <div>
-                                    <dt class="text-base font-semibold leading-7 text-gray-900">Can I track the location of my bike or scooter taxi?</dt>
-                                    <dd class="mt-2 text-base leading-7 text-gray-600">Yes, our app allows you to track the real-time location of your bike or scooter taxi once it has been assigned to you. This way, you can know exactly when it will arrive at your pickup location.</dd>
+                                    <dt class="text-base font-semibold leading-7 text-gray-900">Can I track the location of the bicycle I rented?</dt>
+                                    <dd class="mt-2 text-base leading-7 text-gray-600">No, currently we do not offer real-time tracking of rented bicycles. However, you can coordinate with the bicycle owner for pickup and drop-off arrangements.</dd>
                                 </div>
                                 <div>
-                                    <dt class="text-base font-semibold leading-7 text-gray-900">What payment methods are accepted for bike and scooter taxi rides?</dt>
-                                    <dd class="mt-2 text-base leading-7 text-gray-600">We accept various payment methods including UPI, credit/debit cards, mobile wallets, and cash. You can choose your preferred payment method within the app before confirming your booking.</dd>
+                                    <dt class="text-base font-semibold leading-7 text-gray-900">What payment methods are accepted for renting a bicycle?</dt>
+                                    <dd class="mt-2 text-base leading-7 text-gray-600">We accept various payment methods including UPI, credit/debit cards, mobile wallets, and cash. You can choose your preferred payment method at the time of booking.
+
+</dd>
                                 </div>
                             </dl>
                         </div>

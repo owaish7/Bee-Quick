@@ -134,35 +134,6 @@ function EmpRegister() {
     } else {
       setRoleError('');
     }
-    // if (role === 'Driver') {
-    //     if (bikePlateNumber === '') {
-    //       isValid = false;
-    //       setBikePlateNumberError('This field is required');
-    //     } else {
-    //       setBikePlateNumberError('');
-    //     }
-    
-    //     if (ownerId === '') {
-    //       isValid = false;
-    //       setOwnerIdError('This field is required');
-    //     } else {
-    //       setOwnerIdError('');
-    //     }
-    
-    //     if (manufacturingDate === '') {
-    //       isValid = false;
-    //       setManufacturingDateError('This field is required');
-    //     } else {
-    //       setManufacturingDateError('');
-    //     }
-    
-    //     if (model === '') {
-    //       isValid = false;
-    //       setModelError('This field is required');
-    //     } else {
-    //       setModelError('');
-    //     }
-    //   }
 
     if (isValid) {
 
@@ -217,14 +188,14 @@ function EmpRegister() {
           required
         >
           <option value="">Select Role</option>
-          <option value="Driver">Driver</option>
+          <option value="Driver">Partner</option>
           <option value="Manager">Manager</option>
         </select>
         {roleError && <p className="text-red-500 text-sm">{roleError}</p>}
         {role === 'Driver' && (
             <div>
               <label className="block text-black text-sm font-semibold mb-2" htmlFor="bikePlateNumber">
-                Bike Plate Number:
+                Bicycle Plate Number:
               </label>
               <input
                 type="text"
@@ -252,7 +223,7 @@ function EmpRegister() {
               /> */}
 
               <label className="block text-black text-sm font-semibold mb-2" htmlFor="manufacturingDate">
-                Bike Manufacturing Date:
+                Bicycle Manufacturing Date:
               </label>
               <input
                 type="date"
@@ -266,7 +237,7 @@ function EmpRegister() {
               />
 
               <label className="block text-black text-sm font-semibold mb-2" htmlFor="model">
-                Bike Model:
+                Bicycle Model:
               </label>
               <input
                 type="text"

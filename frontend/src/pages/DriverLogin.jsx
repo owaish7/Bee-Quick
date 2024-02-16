@@ -53,7 +53,7 @@ function DriverLogin() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-400 via-amber-300 to-amber-100">
       <div className="bg-white p-8 rounded-md shadow-lg w-96 transform transition-transform hover:scale-105">
         <h2 className="text-4xl font-extrabold text-center text-black mb-6 font-serif">
-          Driver Login
+          Partner Login
         </h2>
         <div className="mb-4">
           <label className="block text-black text-sm font-semibold mb-2" htmlFor="email">
