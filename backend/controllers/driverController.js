@@ -1,93 +1,96 @@
-import { db } from "../db.js";
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
+import Employee from '../models/Employee.js'; // Assuming correct path to Employee model
+import Bike from '../models/Bike.js';         // Assuming correct path to Bike model
 
-
-export const register = (req, res) => {
-    const { emp_id, pwd, name, ph_no, gender, role, age, residence } = req.body
-    console.log(role)
-    // console.log(ownerid)
-    var q = `SELECT * FROM employees WHERE emp_id = ?`
-    db.query(q, [emp_id], (err, data) => {
-        if (err) {
-            return res.status(500).json(err);
-            console.log("some error")
+// REGISTER FUNCTION
+export const register = async (req, res) => {
+    const { emp_id, pwd, name, ph_no, gender, role, age, residence, bike_id, manufacturing_date, model, avail } = req.body;
+    
+    try {
+        // Check if employee already exists
+        const existingEmployee = await Employee.findOne({ emp_id });
+        if (existingEmployee) {
+            return res.status(409).json("Employee already exists!");
         }
-        if (data.length) {
-            return res.status(409).json("Driver already exists!");
+
+        // Hash the password
+        const salt = bcrypt.genSaltSync(10);
+        const hashedPassword = bcrypt.hashSync(pwd, salt);
+
+        // Create a new employee document
+        const newEmployee = new Employee({
+            emp_id,
+            pwd: hashedPassword,
+            name,
+            ph_no,
+            gender,
+            role,
+            age,
+            residence,
+        });
+
+        // Save the new employee
+        await newEmployee.save();
+
+        // If the role is "Driver", add the bike details
+        if (role === 'Driver') {
+            const newBike = new Bike({
+                bike_id,
+                owner_id: emp_id,
+                manufacturing_date: new Date(manufacturing_date),
+                model,
+                avail
+            });
+
+            // Save the new bike
+            await newBike.save();
+            return res.status(200).json("Driver has been created");
+        } else {
+            return res.status(200).json("Employee created");
         }
-    });
 
-    // GENERATE A HASHED PASSWORD FOR THE ENTERED PASSWORD
-    const salt = bcrypt.genSaltSync(10);
-    const hashedPassword = bcrypt.hashSync(pwd, salt);
+    } catch (err) {
+        console.error("Error occurred during registration", err);
+        return res.status(500).json(err);
+    }
+};
 
-    // const date = new Date()
-
-    // INSERTING A NEW STUDENT IN THE TABLE
-    // q = "INSERT INTO students (`username`, `email`, `password`, `name`, `hostel_name`, `role`, `registration_date`) VALUES (?)";
-    q = `INSERT INTO employees (emp_id, pwd, name, ph_no, gender, role, age, residence) VALUES (?,?,?,?,?,?,?,?)`
-    const values = [emp_id, hashedPassword, name, ph_no, gender, role, age, residence];
-    console.log(values)
-
-    db.query(q, values, (err, data) => {
-        if (err) {
-            console.log("error occurred while sending query in register");
-            return res.status(500).json(err);
-        }
-        else {
-            if (role === 'Driver') {
-                const { bike_id, manufacturing_date, model, avail } = req.body;
-                const query = `INSERT INTO bikes(bike_id, owner_id, manufacturing_date, model, avail) VALUES (?,?,?,?,?)`
-                const v = [bike_id, emp_id, manufacturing_date, model, avail];
-                console.log(v)
-                db.query(query, v, (err, data) => {
-                    if (err) {
-                        console.log("error occurred while sending query in register");
-                        return res.status(500).json(err);
-                    }
-                    return res.status(200).json("Driver has been created");
-                });
-            } else return res.status(200).json("Employee created")
-        }
-    });
-}
-// FUNCTION: Student LogIn
-export const login = (req, res) => {
+// LOGIN FUNCTION
+export const login = async (req, res) => {
     const { emp_id, pwd } = req.body;
-    const pass = pwd
-    // CHECKING IF THE STUDENT EXISTS OR NOT
-    var q = "SELECT * FROM employees WHERE emp_id = ?";
 
-    db.query(q, [emp_id], (err, data) => {
-        if (err) {
-            return res.status(500).json(err);
-        }
-        if (data.length === 0) {
+    try {
+        // Find employee by emp_id
+        const employee = await Employee.findOne({ emp_id });
+        if (!employee) {
             return res.status(404).json("User not found!");
         }
 
-        // CHECKING IF THE ENTERED PASSWORD MATCHED THE STUDENT'S PASSWORD OR NOT
-        const checkPassword = bcrypt.compareSync(pass, data[0].pwd);
-
+        // Check if password matches
+        const checkPassword = bcrypt.compareSync(pwd, employee.pwd);
         if (!checkPassword) {
             return res.status(400).json("Wrong password or username");
         }
 
-        // ASSIGNING A TOKEN TO THE STUDENT
-        const token = jwt.sign({ ownerid: data[0].ownerid }, "secretkey");
-        const { pwd, ...other } = data[0];
+        // Generate JWT token
+        const token = jwt.sign({ emp_id: employee.emp_id }, "secretkey");
+
+        // Send the response without the password
+        const { pwd, ...other } = employee._doc;
 
         res.cookie("accessToken", token, {
             httpOnly: true,
         }).status(200).json(other);
 
-    });
-
+    } catch (err) {
+        console.error("Error occurred during login", err);
+        return res.status(500).json(err);
+    }
 };
 
-// FUNCTION: Student LogOut
+// LOGOUT FUNCTION
 export const logout = (req, res) => {
     res.clearCookie("accessToken", {
         secure: true,
